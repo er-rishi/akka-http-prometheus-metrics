@@ -19,8 +19,8 @@ object TotalRequestByUserIdMetric {
   }
 }
 
-final case class UserIdDimension(tenantId: String) extends Dimension {
+final case class UserIdDimension(userId: String) extends Dimension {
   override def key: String = "userId"
 
-  override def value: String = tenantId
+  override def value: String = userId
 }
