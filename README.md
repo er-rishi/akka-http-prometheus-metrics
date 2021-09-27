@@ -13,6 +13,6 @@ This is a simple akka http application which exposes the metrics in Prometheus f
  ### Check the metrics
  Run the application and hit the below url:
  ```  
- http://localhost:9000/admin/prometheus/metrics
+ http://localhost:8080/admin/prometheus/metrics
  
   ```
