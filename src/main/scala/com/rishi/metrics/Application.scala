@@ -4,7 +4,6 @@ import akka.actor.ActorSystem
 import akka.http.scaladsl.Http
 import akka.http.scaladsl.server.Directives._
 import akka.stream.ActorMaterializer
-import com.knoldus.metrics.controller.MetricsController
 import com.rishi.metrics.controller.{ApiController, MetricsController}
 import fr.davit.akka.http.metrics.core.scaladsl.server.HttpMetricsRoute
 import org.slf4j.{Logger, LoggerFactory}

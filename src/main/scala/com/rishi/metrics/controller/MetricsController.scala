@@ -18,7 +18,7 @@ class MetricsController {
 object MetricsController {
   val routes: Route = new MetricsController().route
 
-  private val settings: PrometheusSettings = PrometheusSettings
+  val settings: PrometheusSettings = PrometheusSettings
     .default
     .withIncludePathDimension(true)
     .withIncludeMethodDimension(true)
@@ -28,7 +28,7 @@ object MetricsController {
     .withSentBytesConfig(PrometheusSettings.DefaultQuantiles)
     .withDefineError(_.status.isFailure)
 
-  private val collector: CollectorRegistry = CollectorRegistry.defaultRegistry
+  val collector: CollectorRegistry = CollectorRegistry.defaultRegistry
 
   val registry: PrometheusRegistry = PrometheusRegistry(collector, settings)
 }
