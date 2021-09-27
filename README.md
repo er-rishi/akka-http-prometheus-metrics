@@ -16,3 +16,6 @@ This is a simple akka http application which exposes the metrics in Prometheus f
  http://localhost:8080/admin/prometheus/metrics
  
   ```
+
+## Expose new custom metric
+To expose a new custom metric, please see here https://github.com/er-rishi/akka-http-prometheus-metrics/tree/add-new-custom-metrics
