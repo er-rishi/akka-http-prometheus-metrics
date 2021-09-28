@@ -1,5 +1,5 @@
 # akka-http-prometheus-metrics
-This is a simple akka http application which exposes a new custom metric in Prometheus format.
+This is a simple akka http application which adds a new custom label to the existing metrics.
 
 ### Add the dependency to get the metrics
 ```
@@ -9,16 +9,15 @@ This is a simple akka http application which exposes a new custom metric in Prom
             <version>1.1.1</version>
     </dependency>
  ```
-    
- ### Check the metrics
- Run the application and hit the below url:
- ```  
- http://localhost:8080/admin/prometheus/metrics
+### Generate the metrics
+Run the application and hit the below url:
+ ```http://localhost:8080/user?userId=4```
+
+### Check the metrics
+ Hit the below url:
+ ```http://localhost:8080/admin/prometheus/metrics```
+
+### Add a custom label to existing metrics
+Added custom label ```userId``` in existing metrics
  
-  ```
-### New custom metrics
- Added a new custom metric ```akka_http_request_by_user_id``` which has one label
- ```userId```.
- We can add as many as label we want.
- 
-```akka_http_request_by_user_id{userId="3",} 1.0```
+```akka_http_responses_duration_seconds_count{method="GET",path="unlabelled",status="2xx",userId="4",} 1.0```

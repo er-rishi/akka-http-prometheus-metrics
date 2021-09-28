@@ -2,11 +2,11 @@ package com.rishi.metrics.controller
 
 import akka.http.scaladsl.server.Directives.{path, _}
 import akka.http.scaladsl.server.Route
+import com.rishi.metrics.custom.PrometheusMarshallersCustom._
+import com.rishi.metrics.custom.PrometheusRegistryCustom
 import fr.davit.akka.http.metrics.core.scaladsl.server.HttpMetricsDirectives.metrics
-import fr.davit.akka.http.metrics.prometheus.marshalling.PrometheusMarshallers._
-import fr.davit.akka.http.metrics.prometheus.{Buckets, PrometheusRegistry, PrometheusSettings, Quantiles}
+import fr.davit.akka.http.metrics.prometheus.{Buckets, PrometheusSettings, Quantiles}
 import io.prometheus.client.CollectorRegistry
-
 
 class MetricsController {
 
@@ -30,5 +30,5 @@ object MetricsController {
 
   val collector: CollectorRegistry = CollectorRegistry.defaultRegistry
 
-  val registry: PrometheusRegistry = PrometheusRegistry(collector, settings)
+  val registry: PrometheusRegistryCustom = PrometheusRegistryCustom(collector, settings)
 }
