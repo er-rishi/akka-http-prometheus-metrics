@@ -19,3 +19,6 @@ This is a simple akka http application which exposes the metrics in Prometheus f
 
 ## Expose new custom metric
 To expose a new custom metric, please see here https://github.com/er-rishi/akka-http-prometheus-metrics/tree/add-new-custom-metrics
+
+## Add a custom label to existing metrics
+To add a custom label to existing metrics, please see here https://github.com/er-rishi/akka-http-prometheus-metrics/tree/add-custom-label-in-existing-metric
